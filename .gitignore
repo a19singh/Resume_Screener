@@ -1,0 +1,10 @@
+#ignore pdfs
+*.pdf
+__pycache__/
+base.egg-info/
+*.pkl
+*.pickle
+*.sav
+myenv/
+templates/
+db.sqlite3
