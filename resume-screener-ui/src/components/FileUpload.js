@@ -40,40 +40,32 @@ export default class FileUpload extends Component {
                     {this.state.data_state ?
                         <>
                             <div className="row g-3  rounded p-2 my-1">
-                                <Donut res={this.state.data} />
+                                <Donut res={this.state.data} title = {this.props.title} />
                                 <div className="mb-2 text-center">
-                                    <input type="submit" className="btn btn-primary" onClick={this.handleBack} value="Back" />
+                                    <input type="submit" className="btn btn-success" onClick={this.handleBack} value="Back" />
                                 </div>
                             </div>
                         </>
                         :
                         <>
-                            <div className="">
-                                <h2>{this.props.formTitle}</h2>
+                        <div className="card rounded py-4 px-5 my-2 bg-dark">
+                            <div className="mb-3 text-light">
+                                <strong><h2>{this.props.formTitle}</h2></strong>
                             </div>
-                            <div className="row g-3 border border-warning rounded p-2 my-1">
-                                <div className="mb-2">
-                                    <label htmlFor="formFile" className="form-label">Click on the "Choose File" button to upload a file:</label>
-                                    <input className="form-control" type="file" id="files" name="files" onChange={this.getFile} />
+                            
+                            <div className="row g-3 border border-success rounded p-2 my-1">
+                                <div className="mb-2 text-light">
+                                    <label htmlFor="formFile" className="form-label mb-4">Click on the "Choose File" button to upload a file:</label>
+                                    <input className="form-control " type="file" id="files" name="files" onChange={this.getFile} />
                                 </div>
                                 <div className="col mb-2 ">
                                     {/* <Link to="/donut"> */}
-                                    <input type="submit" className="btn btn-primary" onClick={this.handleSubmit} value="Upload" />
+                                    <input type="submit" className="btn btn-success" onClick={this.handleSubmit} value="Upload" />
+                                </div>
                                 </div>
                             </div>
                         </>
                     }
-                    {/* else{
-                        <>
-                        <Link to="/donut" params={{ res: this.state.data }} >
-                            
-                    </Link>
-                    </>
-                    } */}
-
-
-                    {/* </form> */}
-
                 </div>
 
             </div>
@@ -116,7 +108,8 @@ export default class FileUpload extends Component {
     handleBack = () => {
         this.setState({
             data: [],
-            data_state: false
+            data_state: false,
+            pdf_file: null
         });
     }
 

@@ -15,15 +15,10 @@ function App() {
       <Navbar />
       <Router>
         <Routes>
-          <Route exact path="/" element={<FileUpload formTitle="Upload Resume" /> }>
+          <Route exact path="/" element={<FileUpload formTitle="Upload Resume" title="Resume Insight" /> }>
             {/* formTitile="Upload Resume"  element={<PrivateRoute/>}*/}
           </Route>
-          <Route path="/donut/:res" render={({match}) => (
-          <Donut
-            res={match.params.res}
-          />
-)}>
-          </Route>
+      
         </Routes>
 
 
