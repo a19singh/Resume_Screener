@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from resume_screen import urls as resume_screen_urls
+from . import views 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(resume_screen_urls)), 
+    path('', views.index, name="index"), 
 ]
